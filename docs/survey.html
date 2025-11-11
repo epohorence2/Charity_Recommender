@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Charity Survey • Charity Recommender</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Charity Recommender" width="36" height="36" />
+        <span>Charity Recommender</span>
+      </a>
+      <nav>
+        <a aria-current="page" href="survey.html">Survey</a>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero compact">
+      <div class="container">
+        <p class="eyebrow">3 quick steps</p>
+        <h1>Tell us about your giving goals</h1>
+        <p class="lead">We only keep this information in your browser. Refresh the page to start over.</p>
+      </div>
+    </section>
+
+    <section class="survey" aria-labelledby="survey-title">
+      <div class="container">
+        <div class="survey-layout">
+          <div>
+            <div id="progress" class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0">
+              Required questions answered: <span data-count>0</span> / 3
+            </div>
+            <form id="survey-form" novalidate>
+              <fieldset>
+                <legend>Which issue family are you most interested in?<span aria-hidden="true">*</span></legend>
+                <p class="fieldset-help">Pick one so we can tailor recommendations.</p>
+                <div class="option-grid">
+                  <label><input type="radio" name="q_issue_family" value="health" required />Health</label>
+                  <label><input type="radio" name="q_issue_family" value="education" required />Education</label>
+                  <label><input type="radio" name="q_issue_family" value="environment" required />Environment</label>
+                  <label><input type="radio" name="q_issue_family" value="human_services" required />Human services</label>
+                  <label><input type="radio" name="q_issue_family" value="arts" required />Arts &amp; culture</label>
+                  <label><input type="radio" name="q_issue_family" value="international" required />International</label>
+                  <label><input type="radio" name="q_issue_family" value="animals" required />Animal welfare</label>
+                  <label><input type="radio" name="q_issue_family" value="other" required />Other / flexible</label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>How do you want your donation to create impact?<span aria-hidden="true">*</span></legend>
+                <div class="option-grid tight">
+                  <label><input type="radio" name="q_impact_mode" value="direct" required />Direct services</label>
+                  <label><input type="radio" name="q_impact_mode" value="advocacy" required />Policy &amp; advocacy</label>
+                  <label><input type="radio" name="q_impact_mode" value="research" required />Research</label>
+                  <label><input type="radio" name="q_impact_mode" value="mixed" required />A blend of approaches</label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Where should the impact take place?<span aria-hidden="true">*</span></legend>
+                <div class="option-grid tight">
+                  <label><input type="radio" name="q_geography" value="local" required />Local / community</label>
+                  <label><input type="radio" name="q_geography" value="national" required />National</label>
+                  <label><input type="radio" name="q_geography" value="global" required />Global</label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Is there a city, region, or country we should prioritize?</legend>
+                <p class="fieldset-help">Optional — e.g., <span class="code">US-NY</span> or "Nairobi".</p>
+                <input type="text" name="q_location" id="q_location" placeholder="City, region, or code" inputmode="text" />
+              </fieldset>
+
+              <fieldset>
+                <legend>Any specific topics or populations?</legend>
+                <p class="fieldset-help">Check all that apply.</p>
+                <div class="option-grid multi">
+                  <label><input type="checkbox" name="q_topics" value="youth" />Youth</label>
+                  <label><input type="checkbox" name="q_topics" value="climate" />Climate</label>
+                  <label><input type="checkbox" name="q_topics" value="equity" />Equity</label>
+                  <label><input type="checkbox" name="q_topics" value="healthcare" />Healthcare access</label>
+                  <label><input type="checkbox" name="q_topics" value="arts" />Arts education</label>
+                  <label><input type="checkbox" name="q_topics" value="food" />Food security</label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>How do you prefer to give?</legend>
+                <div class="option-grid tight">
+                  <label><input type="radio" name="q_donation_preference" value="monthly" />Monthly</label>
+                  <label><input type="radio" name="q_donation_preference" value="one_time" />One-time</label>
+                  <label><input type="radio" name="q_donation_preference" value="no_preference" />No preference</label>
+                </div>
+              </fieldset>
+
+              <div class="form-actions">
+                <button type="submit" class="button" data-loading-label="Submitting…">Get recommendations</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="results-panel" aria-live="polite">
+            <h2 id="results-heading" class="visually-hidden" tabindex="-1">Recommendation results</h2>
+            <div id="survey-error" class="alert" role="status" aria-live="polite" hidden></div>
+            <div id="results" role="list" class="card-stack" aria-live="polite"></div>
+            <button id="load-more" class="button secondary" type="button" hidden disabled>Load more</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Questions? Contact the maintainers before donating.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="assets/survey.js"></script>
+</body>
+</html>

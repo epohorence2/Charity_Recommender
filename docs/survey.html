@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Charity Survey • Charity Recommender</title>
+  <title>Charity Survey • Charity Advisor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -14,10 +14,9 @@
     <div class="container">
       <a class="brand" href="index.html">
         <img src="assets/logo.svg" alt="Charity Recommender" width="36" height="36" />
-        <span>Charity Recommender</span>
+        <span>Charity Advisor</span>
       </a>
       <nav>
-        <a aria-current="page" href="survey.html">Survey</a>
         <a href="index.html">Home</a>
         <a href="privacy.html">Privacy</a>
       </nav>
@@ -27,8 +26,7 @@
   <main>
     <section class="hero compact">
       <div class="container">
-        <p class="eyebrow">3 quick steps</p>
-        <h1>Tell us about your giving goals</h1>
+        <h1>Tell us about your interests and values</h1>
         <p class="lead">We only keep this information in your browser. Refresh the page to start over.</p>
       </div>
     </section>
@@ -38,8 +36,8 @@
         <div class="survey-layout">
           <div>
             <div id="progress" class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0">
-              Required questions answered: <span data-count>0</span> / 3
-            </div>
+              Required questions answered: <span data-count>0</span> / X
+            <!-- </div>
             <form id="survey-form" novalidate>
               <fieldset>
                 <legend>Which issue family are you most interested in?<span aria-hidden="true">*</span></legend>
@@ -107,7 +105,7 @@
                 <button type="submit" class="button" data-loading-label="Submitting…">Get recommendations</button>
               </div>
             </form>
-          </div>
+          </div> -->
 
           <div class="results-panel" aria-live="polite">
             <h2 id="results-heading" class="visually-hidden" tabindex="-1">Recommendation results</h2>
@@ -122,7 +120,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>Questions? Contact the maintainers before donating.</p>
+      <p>_____</p>
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="privacy.html">Privacy</a>

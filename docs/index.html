@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Charity Recommender</title>
+  <title>Charity Advisor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -13,8 +13,8 @@
   <header class="site-header">
     <div class="container">
       <a class="brand" href="index.html">
-        <img src="assets/logo.svg" alt="Charity Recommender" width="36" height="36" />
-        <span>Charity Recommender</span>
+        <img src="assets/logo.svg" alt="Charity Advisor" width="36" height="36" />
+        <span>Charity Advisor</span>
       </a>
       <nav>
         <a href="survey.html">Survey</a>
@@ -27,26 +27,17 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container grid">
         <div>
-          <p class="eyebrow">Find your next high-impact donation</p>
-          <h1 id="hero-title">Personalized charity picks in two minutes</h1>
+          <p class="eyebrow">Give with Purpose</p>
+          <h1 id="hero-title">Personalized charity recommendations in just a few minutes</h1>
           <p class="lead">
-            Answer a short survey and we will surface organizations that match your interests, values,
-            and preferred way to give. No logins. No data stored.
+            Fill out our quick survey and we will return personalized organizations that match your 
+            interests, values, and preferred ways to donate.
           </p>
           <div class="hero-cta">
             <a id="cta-start" class="button" href="survey.html">Start the survey</a>
-            <button class="button ghost" type="button" data-scroll="how-it-works">How it works</button>
           </div>
         </div>
-        <div class="hero-panel" aria-live="polite">
-          <h2>Today's spotlight</h2>
-          <p>Updated daily so you always see fresh ideas.</p>
-          <ul class="spotlight-list">
-            <li>Health equity initiatives</li>
-            <li>Climate resilience and conservation</li>
-            <li>Community-based education</li>
-          </ul>
-        </div>
+       
       </div>
     </section>
 
@@ -54,18 +45,15 @@
       <div class="container">
         <h2>How it works</h2>
         <ol class="steps">
-          <li>
-            <h3>Share what matters</h3>
-            <p>Tell us about the causes you care about, where you would like to make an impact, and how you prefer to give.</p>
-          </li>
-          <li>
-            <h3>We match quickly</h3>
-            <p>Our lightweight FastAPI backend translates your answers into search filters and curates results from trusted nonprofit data.</p>
-          </li>
-          <li>
-            <h3>Act with confidence</h3>
-            <p>Each recommendation includes a concise summary, location, and a direct link so you can learn more or donate immediately.</p>
-          </li>
+          <p class="lead">
+            Our curated survey matches your responses to one or more of the IRS's National Taxonomy of Exempt Entities
+            (NTEE) codes. These codes contain identifying information about a charity such as their main cause and 
+            specific focus. Then, using the Ever.org API we filter for results with the matched NTEE codes and few other
+            variables. 
+
+            Don't like your first three results? Click the Load More button to bring up new charity recommendations.  
+
+          </p>
         </ol>
       </div>
     </section>
@@ -74,10 +62,9 @@
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Daily rotation</p>
             <h2 id="daily-heading">Featured charities</h2>
           </div>
-          <p class="muted">We refresh this list every morning based on a stable pool of vetted organizations.</p>
+          <p class="muted">A random set of three charities rotated daily</p>
         </div>
         <div id="daily-error" class="alert" role="status" aria-live="polite" hidden></div>
         <div id="daily-picks" class="card-grid" aria-live="polite" aria-busy="true"></div>
@@ -87,7 +74,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>Built with ❤️ to make generosity easier.</p>
+      <p>____</p>
       <div class="footer-links">
         <a href="survey.html">Survey</a>
         <a href="privacy.html">Privacy</a>
